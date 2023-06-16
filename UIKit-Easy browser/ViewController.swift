@@ -76,6 +76,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
 			}
 		}
 		decisionHandler(.cancel)
+		let ac = UIAlertController(title: "Danger", message: "Sorry! Can't let you go.", preferredStyle: .alert)
+		ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+		ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+		present(ac, animated: true)
 	}
 }
 
